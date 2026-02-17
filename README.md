@@ -74,15 +74,29 @@ This provides empirical evidence that a single pretrained Transformer can adapt 
 
 ---
 
-## Repository Structure
 
-- `task_sampler.py` – Random Fourier task generator
-- `model.py` – Transformer implementation
-- `train.py` – Pretraining loop
-- `evaluate.py` – Context-size evaluation
-- `plots/` – MSE vs context size visualisations
+### Key Components
 
----
+- **`task_sampler.py`**  
+  Generates synthetic regression tasks using random Fourier series with controllable smoothness parameter β.
+
+- **`model.py`**  
+  Defines the encoder-only Transformer used for in-context regression.
+
+- **`train.py`**  
+  Handles pretraining over many sampled tasks drawn from the Fourier prior.
+
+- **`evaluate.py`**  
+  Evaluates Mean Squared Error (MSE) as a function of context size and smoothness level.
+
+- **`src/notebooks/results.ipynb`**  
+  Contains experimental results, plots, and a brief discussion of empirical findings:
+  - MSE vs context size
+  - Comparison across smoothness levels
+  - Demonstration of test-time adaptivity
+
+- **`requirements.txt`**  
+  Lists Python dependencies required to reproduce the experiments.
 
 ## Takeaway
 
